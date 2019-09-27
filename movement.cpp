@@ -49,7 +49,7 @@ void Robot::moveLeft(){
     robotLocation[x][y] = 1;
     robotLocation[x][temp++] = 0;
   }else{
-    cout << "The robot reaches to the right wall." << endl;
+    cout << "The robot reaches to the left wall." << endl;
   }
 }
 
@@ -73,40 +73,56 @@ void Robot::moveBackward(){
     robotLocation[x][y] = 1;
     robotLocation[temp--][y] = 0;
   }else{
-    cout << "The robot reaches to the right wall." << endl;
+    cout << "The robot reaches to the down wall." << endl;
   }
 }
 
 void Robot::moveRightWall(){
-  int temp = y;
-  cout << "Move all the way to the right wall." << endl;
-  y = 9;
-  robotLocation[x][temp] = 0;
-  robotLocation[x][y] = 1;
+  if(y != 9){
+    int temp = y;
+    cout << "Move all the way to the right wall." << endl;
+    y = 9;
+    robotLocation[x][temp] = 0;
+    robotLocation[x][y] = 1;
+  }else{
+    cout << "The robot reaches to the right wall." << endl;
+  }
 }
 
 void Robot::moveLeftWall(){
-  int temp = y;
-  cout << "Move all the way to the left wall." << endl;
-  y = 0;
-  robotLocation[x][temp] = 0;
-  robotLocation[x][y] = 1;
+  if(y != 0){
+    int temp = y;
+    cout << "Move all the way to the left wall." << endl;
+    y = 0;
+    robotLocation[x][temp] = 0;
+    robotLocation[x][y] = 1;
+  }else{
+    cout << "The robots reaches to the left wall." << endl;
+  }
 }
 
 void Robot::moveUpWall(){
-  int temp = x;
-  cout << "Move all the way to the up wall." << endl;
-  x = 0;
-  robotLocation[temp][y] = 0;
-  robotLocation[x][y] = 1;
+  if(x != 0){
+    int temp = x;
+    cout << "Move all the way to the up wall." << endl;
+    x = 0;
+    robotLocation[temp][y] = 0;
+    robotLocation[x][y] = 1;
+  }else{
+    cout << "The robot reaches to the up wall." << endl;
+  }
 }
 
 void Robot::moveDownWall(){
-  int temp = x;
-  cout << "Move all the way to the down wall." << endl;
-  x = 9;
-  robotLocation[temp][y] = 0;
-  robotLocation[x][y] = 1;
+  if(x != 9){
+    int temp = x;
+    cout << "Move all the way to the down wall." << endl;
+    x = 9;
+    robotLocation[temp][y] = 0;
+    robotLocation[x][y] = 1;
+  }else{
+    cout << "The robot reaches to the down wall." << endl;
+  }
 }
 
 void Robot::display(){
